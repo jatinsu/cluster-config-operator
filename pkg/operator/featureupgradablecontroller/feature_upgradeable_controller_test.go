@@ -55,6 +55,15 @@ func TestNewUpgradeableCondition(t *testing.T) {
 				Message: "\"DevPreviewNoUpgrade\" does not allow updates",
 			},
 		},
+		{
+			name:     "okd",
+			features: string(configv1.OKD),
+			expected: operatorv1.OperatorCondition{
+				Reason: "AllowedFeatureGates_OKD",
+				Status: "True",
+				Type:   "FeatureGatesUpgradeable",
+			},
+		},
 	}
 
 	for _, test := range tests {

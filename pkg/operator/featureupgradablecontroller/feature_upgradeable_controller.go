@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	featureGatesAllowingUpgrade = sets.NewString("")
+	featureGatesAllowingUpgrade = sets.NewString("", string(configv1.OKD))
 )
 
 // FeatureUpgradeableController is a controller that sets upgradeable=false if anything outside the allowed list is the specified featuregates.
